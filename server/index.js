@@ -5,6 +5,7 @@ const { Server } = require('socket.io');
 
 const PORT = process.env.APP_PORT || 8080;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
+const ROOM_NAME = 'TESTROOM';
 
 const app = express();
 const server = http.createServer(app);
@@ -18,7 +19,13 @@ const io = new Server(server, {
 app.use(cors());
 
 io.on('connection', (socket) => {
-  console.log('User connected');
+  socket.on('join', (room) => {
+    socket.join(room);
+  });
+
+  socket.on('MESSAGE:SEND', (message) => {
+    io.in(ROOM_NAME).emit('MESSAGE:RECEIVE', message);
+  });
 });
 
 server.listen(PORT, () => {

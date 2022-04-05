@@ -6,3 +6,13 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+
+.App {
+  background-color: #39374B;
+  height: 100vh;
+}
+
+.Chat {
+  max-width: 800px;
+  margin: 0 auto;
+}
