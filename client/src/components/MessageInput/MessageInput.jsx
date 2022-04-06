@@ -7,8 +7,20 @@ import classes from './MessageInput.module.css';
 export const MessageInput = () => {
   const [value, setValue] = useState('');
 
+  const generateSendTime = () => {
+    const currentDate = new Date();
+    const hours = (currentDate.getHours() < 10 ? '0' : '') + currentDate.getHours();
+    const minutes = (currentDate.getMinutes() < 10 ? '0' : '') + currentDate.getMinutes();
+
+    return `${hours}:${minutes}`;
+  };
+
   const sendMessage = () => {
-    const sentTime = `${new Date().getHours()}:${new Date().getMinutes()}`;
+    if (!value.trim()) {
+      return;
+    }
+
+    const sentTime = generateSendTime();
 
     const message = {
       sentTime,
@@ -25,15 +37,15 @@ export const MessageInput = () => {
         value={value}
         onChange={e => setValue(e.target.value)}
         className={classes['message-input']}
+        placeholder="Message..."
         type="text"
       />
       <MdSend
         onClick={sendMessage}
         style={{
-          display: !!value.trim() ? 'inline-block' : 'none',
           cursor: 'pointer',
           fontSize: '35px',
-          color: '#632EE7',
+          color: !!value.trim() ? '#632EE7' : '#919191',
         }}
       />
     </div>
