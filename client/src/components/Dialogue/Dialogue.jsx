@@ -1,12 +1,12 @@
-import classes from './Dialog.module.css'
+import classes from './Dialogue.module.css'
 import { MessageInput } from '../MessageInput/MessageInput';
 import { Messages } from '../Messages/Messages';
-import { DialogTopBar } from '../DialogTopBar/DialogTopBar';
+import { DialogueTopBar } from '../DialogueTopBar/DialogueTopBar';
 
-export const Dialog = () => {
+export const Dialogue = () => {
   return (
-    <div className={classes.dialog}>
-      <DialogTopBar />
+    <div className={classes.dialogue}>
+      <DialogueTopBar />
       <div className={classes.container}>
         <Messages />
       </div>

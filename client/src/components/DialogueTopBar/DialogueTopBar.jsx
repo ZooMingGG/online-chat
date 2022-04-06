@@ -1,6 +1,6 @@
-import classes from './DialogTopBar.module.css';
+import classes from './DialogueTopBar.module.css';
 
-export const DialogTopBar = () => {
+export const DialogueTopBar = () => {
   const isOnline = true;
 
   return (
