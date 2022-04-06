@@ -1,5 +1,16 @@
 .dialog {
+  max-height: 100vh;
   background-color: #120F19;
-  color: white;
   border: 3px solid #231A2F;
-};
+}
+
+.container {
+  height: 80vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar { 
+  display: none;
+}
