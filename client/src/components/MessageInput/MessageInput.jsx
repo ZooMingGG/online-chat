@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { MdSend } from 'react-icons/md';
 
 import socket from '../../socket';
 import classes from './MessageInput.module.css';
@@ -19,14 +20,22 @@ export const MessageInput = () => {
   };
 
   return (
-    <div>
+    <div className={classes['message-input-container']}>
       <input
         value={value}
         onChange={e => setValue(e.target.value)}
         className={classes['message-input']}
         type="text"
       />
-      <button onClick={sendMessage}>Submit</button>
+      <MdSend
+        onClick={sendMessage}
+        style={{
+          display: !!value.trim() ? 'inline-block' : 'none',
+          cursor: 'pointer',
+          fontSize: '35px',
+          color: '#632EE7',
+        }}
+      />
     </div>
   );
 };

@@ -7,4 +7,9 @@
   margin: 20px;
   font-size: 16px;
   color: #8D8A9B;
-};
+}
+
+.message-input-container {
+  display: flex;
+  align-items: center;
+}
