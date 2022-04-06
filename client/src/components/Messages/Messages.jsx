@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import socket from '../../socket';
 import { Message } from '../Message/Message';
@@ -10,9 +10,17 @@ export const Messages = () => {
     { id: 3, isRead: false, text: 'Hi!!', sentTime: '18:32' },
   ]);
 
-  socket.on('MESSAGE:RECEIVE', (message) => {
-    setMessages([...messages, { id: Date.now(), isRead: false, ...message }]);
-  })
+  const onReceiveMessage = (message) => {
+    setMessages(messages => [...messages, { id: Date.now(), isRead: false, ...message }]);
+  };
+
+  useEffect(() => {
+    socket.on('MESSAGE:RECEIVE', onReceiveMessage);
+
+    return () => {
+      socket.off('MESSAGE:RECEIVE', onReceiveMessage);
+    };
+  }, []);
 
   return (
     messages.map(message => <Message key={message.id} message={message} />)
