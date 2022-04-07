@@ -26,6 +26,7 @@
 
 .modal-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 10px;
 }
@@ -36,7 +37,7 @@
 }
 
 .modal-close {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 900;
   color: #FFF;
   cursor: pointer;
@@ -46,4 +47,9 @@
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+}
+
+.modal-btn {
+  margin: 0px 10px;
+  background-color: #120F19;
 }

@@ -1,4 +1,7 @@
+import { GiCancel } from 'react-icons/gi';
+
 import classes from './CreateDialogueModal.module.css';
+import { Button } from '../../shared/components/Button/Button';
 
 export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
   const modalClasses = [classes.modal];
@@ -14,40 +17,43 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
           <span className={classes['modal-header-text']}>
             Create Dialogue
           </span>
-          <span
+          <GiCancel
             onClick={() => setIsVisible(false)}
             className={classes['modal-close']}
-          >
-            X
-          </span>
+          />
         </div>
         <hr />
         <div className={classes['modal-content']}>
           <div>
             <div>
-              <label>Enter teg or email:</label>
+              <label htmlFor="teg">Enter teg:</label>
             </div>
             <div>
-              <input type="text" />
+              <input id="teg" type="text" />
             </div>
           </div>
           <div>
             <div>
-              <label>Enter message:</label>
+              <label htmlFor="message">Enter message:</label>
             </div>
             <div>
-              <input type="text" />
+              <input id="message" type="text" />
             </div>
           </div>
         </div>
         <hr />
         <div className={classes['modal-actions']}>
-          <button
+          <Button
             onClick={() => setIsVisible(false)}
+            className={classes['modal-btn']}
           >
             Close
-          </button>
-          <button>Create</button>
+          </Button>
+          <Button
+            className={classes['modal-btn']}
+          >
+            Create
+          </Button>
         </div>
       </div>
     </div>
