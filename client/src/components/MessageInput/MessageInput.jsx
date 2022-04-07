@@ -42,9 +42,8 @@ export const MessageInput = () => {
       />
       <MdSend
         onClick={sendMessage}
+        className={classes['send-btn']}
         style={{
-          cursor: 'pointer',
-          fontSize: '35px',
           color: !!value.trim() ? '#632EE7' : '#919191',
         }}
       />

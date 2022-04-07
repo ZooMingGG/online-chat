@@ -14,23 +14,13 @@ export const SideBarHeader = () => {
         setIsVisible={setIsVisible}
       />
       <div className={classes.dialogues}>
-        <BsFillPeopleFill
-          style={{
-            marginRight: '10px',
-            cursor: 'pointer',
-            fontSize: '24px',
-            color: '#8D8A9B',
-          }}
-        />
+        <BsFillPeopleFill className={classes['dialogues-icon']} />
         <span>All dialogues</span>
       </div>
       <BsPencilSquare
         onClick={() => setIsVisible(true)}
-        style={{
-          cursor: 'pointer',
-          fontSize: '24px',
-          color: '#8D8A9B',
-        }} />
+        className={classes['create-dialogue-icon']}
+      />
     </div>
   );
 };

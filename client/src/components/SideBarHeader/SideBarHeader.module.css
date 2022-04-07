@@ -15,3 +15,16 @@
   border-top: 3px solid #231A2F;
   border-bottom: 3px solid #231A2F;
 }
+
+.create-dialogue-icon {
+  font-size: 24px;
+  color: #8D8A9B;
+  cursor: pointer;
+}
+
+.dialogues-icon {
+  margin: 0 10px 0 0;
+  font-size: 24px;
+  color: #8D8A9B;
+  cursor: pointer;
+}
