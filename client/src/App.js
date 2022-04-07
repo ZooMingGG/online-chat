@@ -1,9 +1,9 @@
 import { AuthLayout } from './layouts/AuthLayout/AuthLayout';
 import { AppLayout } from './layouts/AppLayout/AppLayout';
 
-const isAuthenticated = true;
-
 export const App = () => {
+  const isAuthenticated = false;
+
   return (
     <div className="App">
       {isAuthenticated ? <AppLayout /> : <AuthLayout />}
