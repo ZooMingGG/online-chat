@@ -1,5 +1,8 @@
 import { useFormik } from 'formik';
 
+import classes from './SignInForm.module.css';
+import { Button } from '../../../shared/components/Button/Button';
+
 export const SignInForm = () => {
   const formik = useFormik({
     initialValues: {
@@ -41,7 +44,12 @@ export const SignInForm = () => {
           />
         </div>
       </div>
-      <button type="submit">Sign In</button>
+      <Button
+        className={classes['submit-btn']}
+        type="submit"
+      >
+        Sign In
+      </Button>
     </form>
   );
 };
