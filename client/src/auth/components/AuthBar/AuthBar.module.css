@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  background-color: #120F19;
+}
+
+.navbar-action {
+  margin: 0 10px;
+  cursor: pointer;
+}
