@@ -22,7 +22,7 @@
   width: 400px;
   border-radius: 10px;
   margin: 15% auto 0;
-  background-color: #4D38A2;
+  background-color: #120F19;
 }
 
 .modal-content {
@@ -57,5 +57,4 @@
 
 .modal-btn {
   margin: 0px 10px;
-  background-color: #120F19;
 }
