@@ -28,6 +28,7 @@ export const SignInForm = () => {
             className={classes.input}
             id="tag"
             name="tag"
+            placeholder="Tag..."
             type="text"
           />
         </div>
@@ -43,6 +44,7 @@ export const SignInForm = () => {
             className={classes.input}
             id="password"
             name="password"
+            placeholder="Password..."
             type="password"
           />
         </div>

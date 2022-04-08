@@ -30,6 +30,7 @@ export const SignUpForm = () => {
             className={classes.input}
             id="firstName"
             name="firstName"
+            placeholder="First name..."
             type="text"
           />
         </div>
@@ -45,6 +46,7 @@ export const SignUpForm = () => {
             className={classes.input}
             id="lastName"
             name="lastName"
+            placeholder="Last name..."
             type="text"
           />
         </div>
@@ -60,6 +62,7 @@ export const SignUpForm = () => {
             className={classes.input}
             id="tag"
             name="tag"
+            placeholder="Tag..."
             type="text"
           />
         </div>
@@ -75,6 +78,7 @@ export const SignUpForm = () => {
             className={classes.input}
             id="password"
             name="password"
+            placeholder="Password..."
             type="password"
           />
         </div>

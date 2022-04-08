@@ -40,7 +40,7 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
         <div className={classes['modal-content']}>
           <div>
             <div>
-              <label htmlFor="teg">Enter teg:</label>
+              <label htmlFor="teg">Enter user tag:</label>
             </div>
             <div>
               <Input
@@ -49,7 +49,7 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
                 className={classes.input}
                 id="tag"
                 name="tag"
-                placeholder="Enter user tag..."
+                placeholder="Tag..."
                 type="text"
               />
             </div>
@@ -65,7 +65,7 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
                 className={classes.input}
                 id="message"
                 name="message"
-                placeholder="Enter message..."
+                placeholder="Message..."
                 type="text"
               />
             </div>
