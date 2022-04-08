@@ -76,6 +76,7 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
           <Button
             onClick={() => setIsVisible(false)}
             className={classes['modal-btn']}
+            type="button"
           >
             Close
           </Button>
