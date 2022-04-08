@@ -9,8 +9,8 @@
   max-width: 60%;
   margin: 10px 0px 10px 10px;
   padding: 20px 50px 20px 20px;
-  background-color: #4D38A2;
-  color: #FFF;
+  background-color: #4d38a2;
+  color: #fff;
   border-radius: 20px;
   word-break: break-all;
 }
@@ -20,13 +20,13 @@
   bottom: 10px;
   right: 10px;
   font-size: 12px;
-  color: #FFF;
+  color: #fff;
 }
 
 .avatar {
   width: 35px;
   height: 35px;
-  background-color: #4D38A2;
+  background-color: #4d38a2;
   border-radius: 50%;
   align-self: flex-end;
 }

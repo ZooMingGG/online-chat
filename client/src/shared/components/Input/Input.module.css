@@ -1,7 +1,7 @@
 .input {
   padding: 10px 20px;
-  background-color: #4D38A2;
-  border: 1px solid #231A2F;
+  background-color: #4d38a2;
+  border: 1px solid #231a2f;
   border-radius: 10px;
   outline: none;
   font-size: 16px;
@@ -9,5 +9,5 @@
 }
 
 .input::placeholder {
-  color: #8D8A9B;
+  color: #8d8a9b;
 }

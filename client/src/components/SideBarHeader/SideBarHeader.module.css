@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: #8D8A9B;
+  color: #8d8a9b;
 }
 
 .container {
@@ -11,19 +11,19 @@
   align-items: center;
   padding: 0 10px;
   height: 53px;
-  background-color: #120F19;
-  border-top: 3px solid #231A2F;
-  border-bottom: 3px solid #231A2F;
+  background-color: #120f19;
+  border-top: 3px solid #231a2f;
+  border-bottom: 3px solid #231a2f;
 }
 
 .create-dialogue-icon {
   font-size: 24px;
-  color: #8D8A9B;
+  color: #8d8a9b;
   cursor: pointer;
 }
 
 .dialogues-icon {
   margin: 0 10px 0 0;
   font-size: 24px;
-  color: #8D8A9B;
+  color: #8d8a9b;
 }

@@ -1,8 +1,8 @@
 .sidebar {
-  background-color: #120F19;
+  background-color: #120f19;
   height: 100vh;
   width: 30%;
-  border-left: 3px solid #231A2F;
+  border-left: 3px solid #231a2f;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
