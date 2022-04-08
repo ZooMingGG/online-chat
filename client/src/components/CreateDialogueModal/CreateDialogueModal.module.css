@@ -9,6 +9,11 @@
   z-index: 1000;
 }
 
+.input {
+  width: 100%;
+  margin: 10px 0 20px 0;
+}
+
 .modal.visible {
   display: block;
 }
@@ -22,6 +27,7 @@
 
 .modal-content {
   padding: 10px;
+  color: #FFF;
 }
 
 .modal-header {
