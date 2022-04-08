@@ -18,12 +18,12 @@ const io = new Server(server, {
 
 app.use(cors());
 
-io.on('connection', (socket) => {
-  socket.on('join', (room) => {
+io.on('connection', socket => {
+  socket.on('join', room => {
     socket.join(room);
   });
 
-  socket.on('MESSAGE:SEND', (message) => {
+  socket.on('MESSAGE:SEND', message => {
     io.in(ROOM_NAME).emit('MESSAGE:RECEIVE', message);
   });
 });

@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 
 import classes from './SignUpForm.module.css';
 import { Button } from '../../../shared/components/Button/Button';
+import { Input } from '../../../shared/components/Input/Input';
 
 export const SignUpForm = () => {
   const formik = useFormik({
@@ -23,12 +24,13 @@ export const SignUpForm = () => {
           <label htmlFor="firstName">Enter your first name</label>
         </div>
         <div>
-          <input
+          <Input
+            onChange={formik.handleChange}
+            value={formik.values.firstName}
+            className={classes.input}
             id="firstName"
             name="firstName"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.firstName}
           />
         </div>
       </div>
@@ -37,12 +39,13 @@ export const SignUpForm = () => {
           <label htmlFor="lastName">Enter your last name</label>
         </div>
         <div>
-          <input
+          <Input
+            onChange={formik.handleChange}
+            value={formik.values.lastName}
+            className={classes.input}
             id="lastName"
             name="lastName"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.lastName}
           />
         </div>
       </div>
@@ -51,12 +54,13 @@ export const SignUpForm = () => {
           <label htmlFor="tag">Enter your tag</label>
         </div>
         <div>
-          <input
+          <Input
+            onChange={formik.handleChange}
+            value={formik.values.tag}
+            className={classes.input}
             id="tag"
             name="tag"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.tag}
           />
         </div>
       </div>
@@ -65,12 +69,13 @@ export const SignUpForm = () => {
           <label htmlFor="password">Enter your password</label>
         </div>
         <div>
-          <input
+          <Input
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            className={classes.input}
             id="password"
             name="password"
             type="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
           />
         </div>
       </div>

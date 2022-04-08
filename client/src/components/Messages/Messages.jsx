@@ -10,7 +10,7 @@ export const Messages = () => {
     { id: 3, isRead: false, text: 'Hi!!', sentTime: '18:32' },
   ]);
 
-  const onReceiveMessage = (message) => {
+  const onReceiveMessage = message => {
     setMessages(messages => [...messages, { id: Date.now(), isRead: false, ...message }]);
   };
 
