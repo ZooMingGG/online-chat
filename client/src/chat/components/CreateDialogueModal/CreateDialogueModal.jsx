@@ -2,8 +2,8 @@ import { useFormik } from 'formik';
 import { GiCancel } from 'react-icons/gi';
 
 import classes from './CreateDialogueModal.module.css';
-import { Button } from '../../shared/components/Button/Button';
-import { Input } from '../../shared/components/Input/Input';
+import { Button } from '../../../shared/components/Button/Button';
+import { Input } from '../../../shared/components/Input/Input';
 
 export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
   const modalClasses = [classes.modal];

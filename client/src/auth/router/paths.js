@@ -1,4 +1,4 @@
 export const paths = {
-  signin: 'auth/signin',
-  signup: 'auth/signup',
+  signIn: 'auth/sign-in',
+  signUp: 'auth/sign-up',
 };

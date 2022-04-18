@@ -7,9 +7,9 @@ import { SignUp } from '../../auth/components/SignUp/SignUp';
 export const AuthRouter = () => {
   return (
     <Routes>
-      <Route path={paths.signin} element={<SignIn />} />
-      <Route path={paths.signup} element={<SignUp />} />
-      <Route path="*" element={<Navigate to={paths.signin} />} />
+      <Route path={paths.signIn} element={<SignIn />} />
+      <Route path={paths.signUp} element={<SignUp />} />
+      <Route path="*" element={<Navigate to={paths.signIn} />} />
     </Routes>
   );
 };

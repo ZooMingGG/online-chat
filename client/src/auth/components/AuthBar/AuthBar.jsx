@@ -8,12 +8,12 @@ export const AuthBar = () => {
   return (
     <div className={classes.navbar}>
       <div>
-        <Link to={paths.signin}>
+        <Link to={paths.signIn}>
           <Button className={classes['navbar-action']}>
             Sign In
           </Button>
         </Link>
-        <Link to={paths.signup}>
+        <Link to={paths.signUp}>
           <Button className={classes['navbar-action']}>
             Sign Up
           </Button>

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 import socket from '../../socket';
-import { Dialogue } from '../../components/Dialogue/Dialogue'
-import { SideBar } from '../../components/SideBar/SideBar';
+import { Dialogue } from '../../chat/components/Dialogue/Dialogue'
+import { SideBar } from '../../chat/components/SideBar/SideBar';
 
 const ROOM_NAME = 'TESTROOM';
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import socket from '../../socket';
+import socket from '../../../socket';
 import { Message } from '../Message/Message';
 
 export const Messages = () => {

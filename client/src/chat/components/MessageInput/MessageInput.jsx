@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { MdSend } from 'react-icons/md';
 
-import socket from '../../socket';
+import socket from '../../../socket';
 import classes from './MessageInput.module.css';
-import { Input } from '../../shared/components/Input/Input';
+import { Input } from '../../../shared/components/Input/Input';
 
 export const MessageInput = () => {
   const [value, setValue] = useState('');

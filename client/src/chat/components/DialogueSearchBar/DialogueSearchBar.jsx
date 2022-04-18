@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import classes from './DialogueSearchBar.module.css';
-import { Input } from '../../shared/components/Input/Input';
+import { Input } from '../../../shared/components/Input/Input';
 
 export const DialogueSearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
