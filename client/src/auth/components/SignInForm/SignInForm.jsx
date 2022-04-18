@@ -3,15 +3,21 @@ import { useFormik } from 'formik';
 import classes from './SignInForm.module.css';
 import { Button } from '../../../shared/components/Button/Button';
 import { Input } from '../../../shared/components/Input/Input';
+import { useFetch } from '../../../hooks/useFetch';
+import { AuthService } from '../../../api/AuthService';
 
 export const SignInForm = () => {
+  const [signIn, isLoading, error] = useFetch(async signInPayload => {
+    const response = await AuthService.signIn(signInPayload);
+  });
+
   const formik = useFormik({
     initialValues: {
       tag: '',
       password: '',
     },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: signInPayload => {
+      signIn(signInPayload);
     },
   });
 
@@ -50,6 +56,7 @@ export const SignInForm = () => {
         </div>
       </div>
       <Button
+        disabled={isLoading}
         className={classes['submit-btn']}
         type="submit"
       >
