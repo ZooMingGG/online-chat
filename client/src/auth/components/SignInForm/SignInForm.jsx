@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import classes from './SignInForm.module.css';
 import { Button } from '../../../shared/components/Button/Button';
 import { Input } from '../../../shared/components/Input/Input';
-import { useFetch } from '../../../hooks/useFetch';
+import { useFetch } from '../../../shared/hooks/useFetch';
 import { AuthService } from '../../../api/AuthService';
 
 export const SignInForm = () => {
