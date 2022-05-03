@@ -1,5 +1,6 @@
 .dialogue {
   max-height: 100vh;
+  width: 70%;
   background-color: #120f19;
   border: 3px solid #231a2f;
 }
@@ -11,6 +12,6 @@
   scrollbar-width: none;
 }
 
-.container::-webkit-scrollbar { 
+.container::-webkit-scrollbar {
   display: none;
 }
