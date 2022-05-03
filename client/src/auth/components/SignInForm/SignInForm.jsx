@@ -7,8 +7,8 @@ import { useFetch } from '../../../shared/hooks/useFetch';
 import { AuthService } from '../../../api/AuthService';
 
 export const SignInForm = () => {
-  const [signIn, isLoading, error] = useFetch(async signInPayload => {
-    const response = await AuthService.signIn(signInPayload);
+  const [signIn, isLoading] = useFetch(async signInPayload => {
+    await AuthService.signIn(signInPayload);
   });
 
   const formik = useFormik({
@@ -55,11 +55,7 @@ export const SignInForm = () => {
           />
         </div>
       </div>
-      <Button
-        disabled={isLoading}
-        className={classes['submit-btn']}
-        type="submit"
-      >
+      <Button disabled={isLoading} className={classes['submit-btn']} type="submit">
         Sign In
       </Button>
     </form>

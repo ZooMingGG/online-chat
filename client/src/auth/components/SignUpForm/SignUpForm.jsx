@@ -83,10 +83,7 @@ export const SignUpForm = () => {
           />
         </div>
       </div>
-      <Button
-        className={classes['submit-btn']}
-        type="submit"
-      >
+      <Button className={classes['submit-btn']} type="submit">
         Sign Up
       </Button>
     </form>

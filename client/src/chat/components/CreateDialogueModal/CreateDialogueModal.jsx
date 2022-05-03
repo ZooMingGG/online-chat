@@ -23,18 +23,10 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
 
   return (
     <div className={modalClasses.join(' ')}>
-      <form
-        onSubmit={formik.handleSubmit}
-        className={classes['modal-container']}
-      >
+      <form onSubmit={formik.handleSubmit} className={classes['modal-container']}>
         <div className={classes['modal-header']}>
-          <span className={classes['modal-header-text']}>
-            Create Dialogue
-          </span>
-          <GiCancel
-            onClick={() => setIsVisible(false)}
-            className={classes['modal-close']}
-          />
+          <span className={classes['modal-header-text']}>Create Dialogue</span>
+          <GiCancel onClick={() => setIsVisible(false)} className={classes['modal-close']} />
         </div>
         <hr />
         <div className={classes['modal-content']}>
@@ -80,10 +72,7 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
           >
             Close
           </Button>
-          <Button
-            className={classes['modal-btn']}
-            type="submit"
-          >
+          <Button className={classes['modal-btn']} type="submit">
             Create
           </Button>
         </div>

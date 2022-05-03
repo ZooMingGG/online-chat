@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { paths } from './paths';
-import { SignIn } from '../../auth/components/SignIn/SignIn';
-import { SignUp } from '../../auth/components/SignUp/SignUp';
+import { SignIn } from '../components/SignIn/SignIn';
+import { SignUp } from '../components/SignUp/SignUp';
 
 export const AuthRouter = () => {
   return (

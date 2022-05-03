@@ -45,7 +45,7 @@ export const MessageInput = () => {
         onClick={sendMessage}
         className={classes['send-btn']}
         style={{
-          color: !!value.trim() ? '#632ee7' : '#919191',
+          color: value.trim() ? '#632ee7' : '#919191',
         }}
       />
     </div>

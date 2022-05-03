@@ -9,10 +9,7 @@ export const SideBarHeader = () => {
 
   return (
     <div className={classes.container}>
-      <CraeteDialogueModal
-        isVisible={isVisible}
-        setIsVisible={setIsVisible}
-      />
+      <CraeteDialogueModal isVisible={isVisible} setIsVisible={setIsVisible} />
       <div className={classes.dialogues}>
         <BsFillPeopleFill className={classes['dialogues-icon']} />
         <span>All dialogues</span>

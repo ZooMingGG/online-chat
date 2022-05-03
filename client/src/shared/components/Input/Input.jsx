@@ -7,12 +7,5 @@ export const Input = ({ value, onChange, className, ...rest }) => {
     inputClasses.push(className);
   }
 
-  return (
-    <input
-      value={value}
-      onChange={onChange}
-      className={inputClasses.join(' ')}
-      {...rest}
-    />
-  );
+  return <input value={value} onChange={onChange} className={inputClasses.join(' ')} {...rest} />;
 };

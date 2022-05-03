@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import socket from '../../socket';
-import { Dialogue } from '../../chat/components/Dialogue/Dialogue'
+import { Dialogue } from '../../chat/components/Dialogue/Dialogue';
 import { SideBar } from '../../chat/components/SideBar/SideBar';
 
 const ROOM_NAME = 'TESTROOM';

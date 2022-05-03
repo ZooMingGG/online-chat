@@ -7,10 +7,8 @@ export const DialogueTopBar = () => {
     <div className={classes.topbar}>
       <div className={classes['user-name']}>User 1</div>
       <div className={classes['user-status']}>
-        <div className={isOnline ? classes.online : classes.offline}></div>
-        <span>
-          {isOnline ? 'Online' : 'Offline'}
-        </span>
+        <div className={isOnline ? classes.online : classes.offline} />
+        <span>{isOnline ? 'Online' : 'Offline'}</span>
       </div>
     </div>
   );
