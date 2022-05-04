@@ -8,7 +8,16 @@
   align-items: center;
 }
 
-.send-btn {
+.send-btn,
+.send-btn-disabled {
   font-size: 35px;
   cursor: pointer;
+}
+
+.send-btn {
+  color: #632ee7;
+}
+
+.send-btn-disabled {
+  color: #919191;
 }

@@ -4,6 +4,7 @@ import { MdSend } from 'react-icons/md';
 import socket from '../../../socket';
 import classes from './MessageInput.module.css';
 import { Input } from '../../../shared/components/Input/Input';
+import { Button } from '../../../shared/components/Button/Button';
 
 export const MessageInput = () => {
   const [value, setValue] = useState('');
@@ -41,12 +42,10 @@ export const MessageInput = () => {
         placeholder="Message..."
         type="text"
       />
-      <MdSend
+      <Button
+        Icon={MdSend}
+        className={value.trim() ? classes['send-btn'] : classes['send-btn-disabled']}
         onClick={sendMessage}
-        className={classes['send-btn']}
-        style={{
-          color: value.trim() ? '#632ee7' : '#919191',
-        }}
       />
     </div>
   );

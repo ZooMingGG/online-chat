@@ -26,7 +26,11 @@ export const CraeteDialogueModal = ({ isVisible, setIsVisible }) => {
       <form onSubmit={formik.handleSubmit} className={classes['modal-container']}>
         <div className={classes['modal-header']}>
           <span className={classes['modal-header-text']}>Create Dialogue</span>
-          <GiCancel onClick={() => setIsVisible(false)} className={classes['modal-close']} />
+          <Button
+            Icon={GiCancel}
+            onClick={() => setIsVisible(false)}
+            className={classes['modal-close']}
+          />
         </div>
         <hr />
         <div className={classes['modal-content']}>
