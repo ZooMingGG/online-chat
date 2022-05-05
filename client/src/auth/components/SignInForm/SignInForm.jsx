@@ -1,8 +1,9 @@
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import classes from './SignInForm.module.css';
 import { Button } from '../../../shared/components/Button/Button';
-import { Input } from '../../../shared/components/Input/Input';
+import { FormControl } from '../../../shared/components/FormControl/FormControl';
 import { useFetch } from '../../../shared/hooks/useFetch';
 import { AuthService } from '../../../api/AuthService';
 
@@ -12,10 +13,19 @@ export const SignInForm = () => {
   });
 
   const formik = useFormik({
+    validateOnMount: true,
     initialValues: {
       tag: '',
       password: '',
     },
+    validationSchema: Yup.object({
+      tag: Yup.string()
+        .min(4, 'Tag must be at least 4 characters long')
+        .required('Tag is required'),
+      password: Yup.string()
+        .min(8, 'Password must be at least 8 characters long')
+        .required('Password is required'),
+    }),
     onSubmit: signInPayload => {
       signIn(signInPayload);
     },
@@ -23,39 +33,33 @@ export const SignInForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div>
-        <div>
-          <label htmlFor="tag">Enter your tag</label>
-        </div>
-        <div>
-          <Input
-            onChange={formik.handleChange}
-            value={formik.values.tag}
-            className={classes.input}
-            id="tag"
-            name="tag"
-            placeholder="Tag..."
-            type="text"
-          />
-        </div>
-      </div>
-      <div>
-        <div>
-          <label htmlFor="password">Enter your password</label>
-        </div>
-        <div>
-          <Input
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            className={classes.input}
-            id="password"
-            name="password"
-            placeholder="Password..."
-            type="password"
-          />
-        </div>
-      </div>
-      <Button disabled={isLoading} className={classes['submit-btn']} type="submit">
+      <FormControl
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.tag}
+        className={classes.input}
+        error={formik.touched.tag && formik.errors.tag}
+        label="Enter your tag"
+        fieldName="tag"
+        placeholder="Tag..."
+        type="text"
+      />
+      <FormControl
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.password}
+        className={classes.input}
+        error={formik.touched.password && formik.errors.password}
+        label="Enter your password"
+        fieldName="password"
+        placeholder="Password..."
+        type="password"
+      />
+      <Button
+        disabled={isLoading || !formik.isValid}
+        className={classes['submit-btn']}
+        type="submit"
+      >
         Sign In
       </Button>
     </form>
