@@ -2,18 +2,15 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { useFetch } from '../../../shared/hooks/useFetch';
-import { AuthService } from '../../../api/AuthService';
 import { SignUpFirstStep } from '../SignUpFirstStep/SignUpFirstStep';
 import { SignUpSecondStep } from '../SignUpSecondStep/SignUpSecondStep';
+import { useSignUp } from '../../hooks/useSignUp';
 
 export const SignUpForm = () => {
   const [step, setStep] = useState(1);
   const [userAvatar, setUserAvatar] = useState(null);
 
-  const [signUp] = useFetch(async signUpPayload => {
-    await AuthService.signUp(signUpPayload);
-  });
+  const [signUp] = useSignUp();
 
   const formik = useFormik({
     validateOnMount: true,

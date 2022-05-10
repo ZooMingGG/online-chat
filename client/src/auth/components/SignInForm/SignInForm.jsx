@@ -4,13 +4,10 @@ import * as Yup from 'yup';
 import classes from './SignInForm.module.css';
 import { Button } from '../../../shared/components/Button/Button';
 import { FormControl } from '../../../shared/components/FormControl/FormControl';
-import { useFetch } from '../../../shared/hooks/useFetch';
-import { AuthService } from '../../../api/AuthService';
+import { useSignIn } from '../../hooks/useSignIn';
 
 export const SignInForm = () => {
-  const [signIn, isLoading] = useFetch(async signInPayload => {
-    await AuthService.signIn(signInPayload);
-  });
+  const [signIn, isLoading] = useSignIn();
 
   const formik = useFormik({
     validateOnMount: true,
