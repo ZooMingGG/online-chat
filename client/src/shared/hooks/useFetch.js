@@ -4,10 +4,12 @@ export const useFetch = callback => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchData = async (...params) => {
+  // eslint-disable-next-line consistent-return
+  const request = async (...params) => {
     try {
       setIsLoading(true);
-      await callback(...params);
+      const response = await callback(...params);
+      return response;
     } catch (err) {
       setError(err);
     } finally {
@@ -15,5 +17,5 @@ export const useFetch = callback => {
     }
   };
 
-  return [fetchData, isLoading, error];
+  return [request, isLoading, error];
 };
