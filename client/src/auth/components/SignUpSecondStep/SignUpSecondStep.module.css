@@ -1,0 +1,10 @@
+.second-step-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+
+.second-step-actions button {
+  width: 45%;
+}

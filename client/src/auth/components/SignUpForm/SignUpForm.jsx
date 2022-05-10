@@ -1,11 +1,20 @@
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import classes from './SignUpForm.module.css';
-import { Button } from '../../../shared/components/Button/Button';
-import { FormControl } from '../../../shared/components/FormControl/FormControl';
+import { useFetch } from '../../../shared/hooks/useFetch';
+import { AuthService } from '../../../api/AuthService';
+import { SignUpFirstStep } from '../SignUpFirstStep/SignUpFirstStep';
+import { SignUpSecondStep } from '../SignUpSecondStep/SignUpSecondStep';
 
 export const SignUpForm = () => {
+  const [step, setStep] = useState(1);
+  const [userAvatar, setUserAvatar] = useState(null);
+
+  const [signUp] = useFetch(async signUpPayload => {
+    await AuthService.signUp(signUpPayload);
+  });
+
   const formik = useFormik({
     validateOnMount: true,
     initialValues: {
@@ -13,6 +22,7 @@ export const SignUpForm = () => {
       lastName: '',
       tag: '',
       password: '',
+      userAvatar: null,
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -29,59 +39,29 @@ export const SignUpForm = () => {
         .required('Password is required'),
     }),
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      const formData = new FormData();
+
+      formData.append('firstName', values.firstName);
+      formData.append('lastName', values.lastName);
+      formData.append('tag', values.tag);
+      formData.append('password', values.password);
+      formData.append('userAvatar', values.userAvatar);
+
+      signUp(formData);
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormControl
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.firstName}
-        className={classes.input}
-        error={formik.touched.firstName && formik.errors.firstName}
-        label="Enter your first name"
-        fieldName="firstName"
-        placeholder="First name..."
-        type="text"
-      />
-      <FormControl
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.lastName}
-        className={classes.input}
-        error={formik.touched.lastName && formik.errors.lastName}
-        label="Enter your last name"
-        fieldName="lastName"
-        placeholder="Last name..."
-        type="text"
-      />
-      <FormControl
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.tag}
-        className={classes.input}
-        error={formik.touched.tag && formik.errors.tag}
-        label="Enter your tag"
-        fieldName="tag"
-        placeholder="Tag..."
-        type="text"
-      />
-      <FormControl
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.password}
-        className={classes.input}
-        error={formik.touched.password && formik.errors.password}
-        label="Enter your password"
-        fieldName="password"
-        placeholder="Password..."
-        type="password"
-      />
-      <Button disabled={!formik.isValid} className={classes['submit-btn']} type="submit">
-        Sign Up
-      </Button>
+      {step === 1 ? <SignUpFirstStep formik={formik} nextStepHandler={() => setStep(2)} /> : null}
+      {step === 2 ? (
+        <SignUpSecondStep
+          formik={formik}
+          prevStepHandler={() => setStep(1)}
+          userAvatar={userAvatar}
+          setUserAvatar={setUserAvatar}
+        />
+      ) : null}
     </form>
   );
 };
