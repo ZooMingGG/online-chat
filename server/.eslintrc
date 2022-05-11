@@ -4,7 +4,9 @@
     "node": true
   },
   "rules": {
-    "no-console": "error",
+    "import/no-dynamic-require": "off",
+    "no-console": "warn",
+    "no-unused-vars": "warn",
     "prettier/prettier": ["error"]
   }
 }
