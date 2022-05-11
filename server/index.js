@@ -1,10 +1,12 @@
 const http = require('http');
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer');
 const { Server } = require('socket.io');
 
-const PORT = process.env.APP_PORT || 8080;
-const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
+const { sequelize } = require('./database/models');
+
+const { CLIENT_URL, SERVER_PORT } = process.env;
 const ROOM_NAME = 'TESTROOM';
 
 const app = express();
@@ -15,8 +17,11 @@ const io = new Server(server, {
     methods: ['GET', 'POST'],
   },
 });
+const upload = multer();
 
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 io.on('connection', socket => {
   socket.on('join', room => {
@@ -28,6 +33,13 @@ io.on('connection', socket => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running on port: ${PORT}`);
-});
+sequelize
+  .authenticate()
+  .then(() => {
+    server.listen(+SERVER_PORT, () => {
+      console.log(`Server running on port: ${SERVER_PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('An error occurred during connection to the database', err);
+  });
